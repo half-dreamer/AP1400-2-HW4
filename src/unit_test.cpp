@@ -6,7 +6,6 @@
 #include <vector>
 #include "unique_ptr.h"
 #include "shared_ptr.h"
-
 /*
 TEST(HW4Test, TEST1) {
     UniquePtr<int> ptr1{new int{10}};
@@ -42,7 +41,6 @@ TEST(HW4Test, TEST4) {
     UniquePtr<std::vector<int>> ptr3{new std::vector<int>{1, 2, 3, 4, 5}};
     EXPECT_EQ((*ptr3)[1], 2);
 }
-
 TEST(HW4Test, TEST5) {
     UniquePtr<std::string> ptr1{new std::string{"hello world!"}};
     EXPECT_EQ(ptr1->length(), 12);
@@ -83,7 +81,7 @@ TEST(HW4Test, TEST9) {
     EXPECT_FALSE(ptr);
     delete tmp;
 }
-
+*/
 TEST(HW4Test, TEST10) {
     SharedPtr<int> ptr1{new int{10}};
     EXPECT_EQ(*ptr1.get(), 10);
@@ -203,7 +201,6 @@ TEST(HW4Test, TEST21) {
     EXPECT_EQ(ptr1.use_count(), 2);
     EXPECT_EQ(ptr2.use_count(), 2);
 }
-*/
 
 
 
