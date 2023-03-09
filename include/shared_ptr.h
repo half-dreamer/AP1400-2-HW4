@@ -18,15 +18,18 @@ class SharedPtr
         SharedPtr &operator=(SharedPtr &ptr);
         T *get();
         T operator*();
-        T operator->();
+        T* operator->();
         void reset();
         void reset(T *newPtr);
-        T *release();
+        explicit operator bool() const;
+        int use_count();
+
+        static map<T *, int> PointerToCountMap;
 
     private:
         T *_p;
-        static map<T *, int> PointerToCountMap = {};
 };
+
 
 #include "shared_ptr.hpp"
 

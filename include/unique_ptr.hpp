@@ -14,7 +14,9 @@ UniquePtr<T>::UniquePtr(T *ptr)
 template <typename T>
 UniquePtr<T>::~UniquePtr() 
 {
-    // ! if _p == nullptr, nothing should be done
+    //  if _p == nullptr, nothing should be done
+    //  but actually, you don't have to check that
+    //  because delete(nullptr) does nothing
     delete (_p);
     _p = nullptr;
 }
